@@ -78,7 +78,7 @@ body {
     text-decoration: line-through;
 }
 #list-continer li.checked::before {
-    background-image: url(image.png);
+    background-image: url(check-box.png);
 }
 #list-continer li span {
     position: absolute;
@@ -98,3 +98,4 @@ body {
     background-color: #555;
     color: white;
 }
+
