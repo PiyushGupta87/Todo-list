@@ -1,35 +1,42 @@
-const inputBox = document.getElementById("input-box");
-const listContiner = document.getElementById("list-continer");
+let input = document.querySelector("#serachTab");
+let listContiner = document.querySelector("#list-continer");
+let addBtn = document.querySelector("#addItemsInList");
 
-function addTask() {
-    if(inputBox.value === '') {
-        alert("You must write something");
+addBtn.addEventListener("click" , (e) => {
+    if(input.value.trim() === "") {
+        alert("Please write something too add in list!");
     }else {
         let li = document.createElement("li");
-        li.innerHTML = inputBox.value;
-        listContiner.appendChild(li);
+        li.textContent = input.value;
+        listContiner.appendChild(li)
+
         let span = document.createElement("span");
-        span.innerHTML = "\u00d7";
+        span.textContent = "\u00d7";
         li.appendChild(span);
     }
-    inputBox.value = '';
+    input.value = "";
     saveData();
-}
-
-listContiner.addEventListener("click",function(e) {
+})
+input.addEventListener("keypress", function(e) {
+    if(e.key === "Enter") {
+        addBtn.click();
+    }
+})
+listContiner.addEventListener("click", (e) => {
     if(e.target.tagName === "LI") {
-        e.target.classList.toggle("chekced");
+        e.target.classList.toggle("checked")
         saveData();
-    }else if(e.target.tagName === "SPAN") {
+    }
+    else if(e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
         saveData();
     }
-},false)
+},false);
 
-function saveData(){
+function saveData() {
     localStorage.setItem("data",listContiner.innerHTML);
 }
-function showTask(){
-    listContiner.innerHTML = localStorage.getItem("data");
+function showTask() {
+    listContiner.innerHTML =  localStorage.getItem("data");
 }
 showTask();
