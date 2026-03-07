@@ -64,7 +64,7 @@ git clone https://github.com/your-username/todo-list-app.git
 
 ## 📸 Screenshot
 
-(Add a screenshot of your app here)
+![alt text](app.screenShot.png)
 
 ---
 
