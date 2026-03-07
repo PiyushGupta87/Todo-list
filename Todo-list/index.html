@@ -4,25 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo-list</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-   <div class="containier">
-    <div class="Todo-app">
-        <h2>Todo-List <img src="to-do2.png"></h2> 
-        <div class="row">
-            <input type="text" id="input-box" placeholder="Add your text">
-            <button onclick="addTask()">Add</button>
+    <div class="container">
+        <div class="item-container">
+            <h1>To-do List</h1>
+            <div class="search-box">
+                <input type="text" name="searchBar" id="serachTab" placeholder="Enter you Tasks">
+                <button id="addItemsInList">Add</button>
+            </div>
+            <ul id="list-continer">
+                <!-- <li>Hello</li>
+                <li>Nameste</li> -->
+            </ul>
         </div>
-        <ul id="list-continer">
-            <!-- <li class="chekced">Task1</li>
-            <li>Task2</li>
-            <li>Task3</li> -->
     </div>
-   </div>
-   <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
